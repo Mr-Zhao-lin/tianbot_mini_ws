@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- Load the urdf into the parameter server. -->
+    <arg name = "ns" default="$(optenv RMTT_NAMESPACE /)" />
+    <param name="robot_description" command="xacro $(find rmtt_description)/urdf/tello_talent.xacro prefix:=$(arg ns)"/>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="rmtt_description" />
+</launch>
